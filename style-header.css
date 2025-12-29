@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-top: 60px;
+    background-color: #817070;
+    color: black;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1001;
+    background: rgb(185, 161, 161);
+    border-bottom: 1px solid #e0e0e0;
+    box-sizing: border-box;
+
+}
+
+
+.home-icon {
+    height: 30px;
+    width: 30px;
+    fill: #fe2c55;
+    margin-right: 8px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+}
+
+.app-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(141, 33, 33);
+}
+
+
+
+.menu-container {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+}
+
+
+.my-menu {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 30px;
+
+}
+
+.my-menu li {
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.my-menu li:hover {
+    color: #4a2a30;
+}
+
+.login-container {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.login-button {
+    background-color: #fe2c55;
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    min-width: 100px;
+    background-color: transparent;
+    border: 1px solid #fe2c55;
+    color: #fe2c55;
+    box-sizing: border-box;
+}
+
+.login-button:hover {
+    background-color: #e62a4e;
+    filter: brightness(0.9);
+    transform: scale(1.02);
+}
+
+.login-button:active {
+    transform: scale(0.95);
+}

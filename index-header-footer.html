@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header and footer demo</title>
+    <link rel="stylesheet" href="style-header.css">
+    <link rel="stylesheet" href="style-footer.css">
+    <link rel="stylesheet" href="style-sidebar.css">
+    <link rel="stylesheet" href="style-index-header-footer.css">
+    <script src="script.js"></script>
+
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #817070;
+            color: rgb(60, 18, 18);
+        }
+
+        #main-content {
+            flex: 1;
+            padding-top: 60px;
+            background-color: red;
+        }
+
+        #sidebar-placeholder {
+            position: fixed;
+            left: 0;
+            top: 60px;
+            width: 240px;
+            background-color: #121212;
+            border-right: 1px solid #2f2f2f;
+            z-index: 999;
+            overflow-y: auto;
+            box-sizing: border-box;
+            border-bottom: none;
+            height: calc(100vh - 60px);
+        }
+
+        .sidebar-menu li {
+            padding: 12px 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            margin: 0;
+        }
+
+        .sidebar-menu li:hover {
+            background-color: #2f2f2f;
+        }
+
+        .video-feed {
+            padding-left: 240px;
+
+            /* Chừa đúng khoảng trống cho Sidebar */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Căn giữa video trong phần diện tích còn lại */
+            padding-top: 20px;
+        }
+
+        .video-card {
+            width: 300px;
+            /* Kích thước video giống TikTok dọc */
+            height: 500px;
+            background-color: #53866a;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        #sidebar-placeholder li {
+            transition: background-color 0.2s;
+            /* Hiệu ứng đổi màu mượt mà */
+            /* Bo góc nhẹ cho giống TikTok 2025 */
+            margin: 0 8px;
+            /* Tạo khoảng trống nhỏ hai bên để nền không chạm sát lề */
+        }
+
+        #sidebar-placeholder li {
+            border: 1px solid red;
+            /* Vẽ khung đỏ quanh từng mục menu */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <main id="main-content">
+
+        <aside id="sidebar-placeholder">
+
+        </aside>
+
+
+        <div class="video-feed">
+            <div class="video-card">
+                <div class="video-placeholder">
+                    This is video!
+                </div>
+                <div class="video-infor">
+                    <p><strong>@username</strong></p>
+                    <p>description of video</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-placeholder">
+                    This is video!
+                </div>
+                <div class="video-infor">
+                    <p><strong>@username</strong></p>
+                    <p>description of video</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-placeholder">
+                    This is video!
+                </div>
+                <div class="video-infor">
+                    <p><strong>@username</strong></p>
+                    <p>description of video</p>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <div id="footer-placeholder"></div>
+</body>
+<script>
+    // Hàm để load file HTML
+    function loadComponent(id, file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+            });
+    }
+
+    // Gọi hàm load
+    loadComponent('header-placeholder', 'header.html');
+    loadComponent('footer-placeholder', 'footer.html');
+    loadComponent('sidebar-placeholder', 'sidebar.html');
+
+</script>
+
+</html>
